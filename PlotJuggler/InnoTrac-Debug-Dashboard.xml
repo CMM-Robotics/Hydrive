@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget name="Main Window" parent="main_window">
+  <Tab tab_name="Betriebsstatus" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="1" sizes="1">
+     <DockSplitter orientation="|" count="2" sizes="0.752625;0.247375">
+      <DockSplitter orientation="-" count="2" sizes="0.5;0.5">
+       <DockSplitter orientation="|" count="3" sizes="0.362445;0.412227;0.225328">
+        <DockArea name="Zonenbereich">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Dots" line_width="3.0">
+          <range bottom="-0.900000" top="4.000000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY min="-0.9" max="4"/>
+          <curve name="0: approaching    1: in Row    2: leaving    3: in Headland" color="#00cc00"/>
+         </plot>
+        </DockArea>
+        <DockArea name="Lenkwinkel [Grad]">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Sticks" line_width="1.0">
+          <range bottom="0.000000" top="49.900000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY min="0" max="49.9"/>
+          <curve name="IST-Lenkwinkel (rechts)" color="#4adc9e"/>
+          <curve name="IST-Lenkwinkel (links)" color="#ff7788"/>
+         </plot>
+        </DockArea>
+        <DockArea name="Fahrtrichtung">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Dots" line_width="2.0">
+          <range bottom="0.100000" top="7.900000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY min="0.1" max="7.9"/>
+          <curve name="4: SOLL-Vorwärts" color="#cc0000"/>
+          <curve name="     IST-Vorwärts" color="#00cc00"/>
+          <curve name="3: SOLL-Links" color="#cc0000"/>
+          <curve name="     IST-Links" color="#00cc00"/>
+          <curve name="2: SOLL-Rechts" color="#cc0000"/>
+          <curve name="     IST-Rechts" color="#00cc00"/>
+          <curve name="1: SOLL-Rückwärts" color="#cc0000"/>
+          <curve name="     IST-Rückwärts" color="#00cc00"/>
+         </plot>
+        </DockArea>
+       </DockSplitter>
+       <DockSplitter orientation="|" count="2" sizes="0.30192;0.69808">
+        <DockArea name="Kraftheber [mm]">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.5">
+          <range bottom="200.000000" top="800.000000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY min="200" max="800"/>
+          <curve name="IST-Höhe" color="#678ebd">
+           <transform name="Absolute" alias="Vorderer"/>
+          </curve>
+          <curve name="IST-Höhe " color="#17cf4b">
+           <transform name="Absolute" alias="Mittlerer"/>
+          </curve>
+          <curve name="IST-Höhe  " color="#bd7922">
+           <transform name="Absolute" alias="Hinterer"/>
+          </curve>
+         </plot>
+        </DockArea>
+        <DockArea name="Fahrzeuggeschwindigkeit [km/h]">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+          <range bottom="1.569240" top="6.900000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY max="6.9"/>
+          <curve name="IST-Geschwindigkeit" color="#ffbd3e"/>
+          <curve name="SOLL-Geschwindigkeit" color="#00a4a2"/>
+          <curve name="Zonengeschwindigkeitsgrenze" color="#d149e9"/>
+         </plot>
+        </DockArea>
+       </DockSplitter>
+      </DockSplitter>
+      <DockSplitter orientation="-" count="2" sizes="0.5;0.5">
+       <DockArea name="Warn-System">
+        <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="3.0">
+         <range bottom="-0.150000" top="10.900000" left="1777976734.484867" right="1777976748.463876"/>
+         <limitY max="10.9"/>
+         <curve name="6: AMBER    7: AMBER_FLASH_SLOW    8: AMBER_FLASH_FAST" color="#b3b91b"/>
+         <curve name="5: BLUE_GREEN" color="#51cb99"/>
+         <curve name="0: OFF    4: ALARM_83    5: ALARM_82" color="#b8693c"/>
+        </plot>
+       </DockArea>
+       <DockSplitter orientation="|" count="3" sizes="0.330667;0.336;0.333333">
+        <DockArea name="Lamp">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Sticks" line_width="3.0">
+          <range bottom="0.100000" top="1.500000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY min="0.1" max="1.5"/>
+          <curve name="Arbeitslampe" color="#cc0000">
+           <transform name="Absolute" alias=""/>
+          </curve>
+         </plot>
+        </DockArea>
+        <DockArea name="Fuel">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Sticks" line_width="1.0">
+          <range bottom="0.000000" top="109.000000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY min="0" max="109"/>
+          <curve name="Kraftstoff-Level" color="#00cc00">
+           <transform name="Absolute" alias=""/>
+          </curve>
+         </plot>
+        </DockArea>
+        <DockArea name="Torque">
+         <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Sticks" line_width="1.0">
+          <range bottom="0.000000" top="109.000000" left="1777976734.484867" right="1777976748.463876"/>
+          <limitY min="0" max="109"/>
+          <curve name="Lastdrehmoment" color="#00cc00">
+           <transform name="Absolute" alias=""/>
+          </curve>
+         </plot>
+        </DockArea>
+       </DockSplitter>
+      </DockSplitter>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="Fahrtrichtungs-Aktivierung" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="1" sizes="1">
+     <DockArea name="Aktive Flags für jeweilige Bewegungsrichtung">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Dots" line_width="2.0">
+       <range bottom="0.100000" top="5.900000" left="1777976734.484867" right="1777976748.459917"/>
+       <limitY min="0.1" max="5.9"/>
+       <curve name="4: SOLL-Vorwärts" color="#cc0000"/>
+       <curve name="     IST-Vorwärts" color="#00cc00"/>
+       <curve name="3: SOLL-Links" color="#cc0000"/>
+       <curve name="     IST-Links" color="#00cc00"/>
+       <curve name="2: SOLL-Rechts" color="#cc0000"/>
+       <curve name="     IST-Rechts" color="#00cc00"/>
+       <curve name="1: SOLL-Rückwärts" color="#cc0000"/>
+       <curve name="     IST-Rückwärts" color="#00cc00"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="Fahrbefehle" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="2" sizes="0.5;0.5">
+     <DockSplitter orientation="|" count="2" sizes="0.64895;0.35105">
+      <DockArea name="Lenkwinkel [Grad] als Betrag">
+       <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+        <range bottom="0.000000" top="50.000000" left="1777976734.484867" right="1777976748.459917"/>
+        <limitY min="0" max="50"/>
+        <curve name="SOLL-Lenkwinkel" color="#cc0000"/>
+        <curve name="IST-Lenkwinkel" color="#00cc00"/>
+       </plot>
+      </DockArea>
+      <DockArea name="Lenkwinkel [Grad] für rechts und links">
+       <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Sticks" line_width="1.0">
+        <range bottom="0.000000" top="50.000000" left="1777976734.484867" right="1777976748.459917"/>
+        <limitY min="0" max="50"/>
+        <curve name="IST-Lenkwinkel (links)" color="#ff7788"/>
+        <curve name="IST-Lenkwinkel (rechts)" color="#4adc9e"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockArea name="Fahrzeuggeschwindigkeit [km/h]">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+       <range bottom="0.000000" top="1.877250" left="1777976734.484867" right="1777976748.459917"/>
+       <limitY min="0"/>
+       <curve name="SOLL-Geschwindigkeit" color="#cc0000"/>
+       <curve name="IST-Geschwindigkeit" color="#00cc00"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="Pfad" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="1" sizes="1">
+     <DockSplitter orientation="|" count="2" sizes="0.5;0.5">
+      <DockArea name="Odometry LLH">
+       <plot flip_y="false" mode="XYPlot" flip_x="false" line_width="1.0">
+        <range bottom="51.003283" top="51.003313" left="13.887439" right="13.887463"/>
+        <limitY/>
+        <curve name="Caesar Trajectory" color="#00cc00"/>
+       </plot>
+      </DockArea>
+      <DockArea name="Odometry ENU">
+       <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+        <range bottom="0.000000" top="1.000000" left="0.000000" right="1.000000"/>
+        <limitY/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="Motorstatus" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="2" sizes="0.5;0.5">
+     <DockSplitter orientation="|" count="2" sizes="0.5;0.5">
+      <DockArea name="Motordrehzahl [U/min]">
+       <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+        <range bottom="7000.000000" top="14000.000000" left="1777976734.484867" right="1777976748.459917"/>
+        <limitY min="7000" max="14000"/>
+        <curve name="SOLL-Motordrehzahl" color="#cc0000"/>
+        <curve name="IST-Motordrehzahl" color="#00cc00"/>
+       </plot>
+      </DockArea>
+      <DockArea name="IST-Motordrehzahl (links/rechts) [U/min]">
+       <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+        <range bottom="0.000000" top="1.000000" left="0.000000" right="1.000000"/>
+        <limitY/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+     <DockSplitter orientation="|" count="2" sizes="0.5;0.5">
+      <DockArea name="Lastdrehmoment [%]">
+       <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Sticks" line_width="2.0">
+        <range bottom="0.000000" top="119.000000" left="1777976734.484867" right="1777976748.459917"/>
+        <limitY min="0" max="119"/>
+        <curve name="Lastdrehmoment" color="#00cc00"/>
+       </plot>
+      </DockArea>
+      <DockArea name="Kraftstoff-Level [%]">
+       <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Sticks" line_width="1.5">
+        <range bottom="0.000000" top="119.000000" left="1777976734.484867" right="1777976748.459917"/>
+        <limitY min="0" max="119"/>
+        <curve name="Kraftstoff-Level" color="#1ac938"/>
+       </plot>
+      </DockArea>
+     </DockSplitter>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="Warnanlage" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="3" sizes="0.346025;0.346025;0.307951">
+     <DockArea name="Aktive Flags für auditiven Alarm">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Dots" line_width="3.0">
+       <range bottom="0.000000" top="6.000000" left="1777976734.485010" right="1777976748.463876"/>
+       <limitY min="0" max="6"/>
+       <curve name="0: OFF    4: ALARM_83    5: ALARM_82" color="#cc0000"/>
+      </plot>
+     </DockArea>
+     <DockArea name="Aktive Flags für visuellen Alarm 1">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Dots" line_width="1.5">
+       <range bottom="4.900000" top="5.100000" left="1777976734.485010" right="1777976748.463876"/>
+       <limitY/>
+       <curve name="5: BLUE_GREEN" color="#cc0000"/>
+      </plot>
+     </DockArea>
+     <DockArea name="Aktive Flags für visuellen Alarm 2">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Dots" line_width="3.0">
+       <range bottom="6.000000" top="9.000000" left="1777976734.485010" right="1777976748.463876"/>
+       <limitY min="6" max="9"/>
+       <curve name="6: AMBER    7: AMBER_FLASH_SLOW    8: AMBER_FLASH_FAST" color="#cc0000"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="PTO-Status" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="3" sizes="0.346025;0.346025;0.307951">
+     <DockArea name="Aktive Flags für jeweilige PTOs">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" style="Dots" line_width="1.5">
+       <range bottom="0.100000" top="3.000000" left="1777976734.484867" right="1777976748.463876"/>
+       <limitY min="0.1" max="3"/>
+       <curve name="2: Vorderere Zapfwelle" color="#cc0000"/>
+       <curve name="1: Hintere Zapfwelle" color="#cc0000"/>
+      </plot>
+     </DockArea>
+     <DockArea name="PTO-Fließgeschwindigkeit (vorne) [l/min]">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+       <range bottom="-0.100000" top="0.100000" left="1777976734.484867" right="1777976748.463876"/>
+       <limitY/>
+       <curve name="SOLL-Fließgeschwindigkeit" color="#cc0000"/>
+       <curve name="IST-Fließgeschwindigkeit" color="#00cc00"/>
+      </plot>
+     </DockArea>
+     <DockArea name="PTO-Fließgeschwindigkeit (hinten) [l/min]">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+       <range bottom="-0.100000" top="0.100000" left="1777976734.484867" right="1777976748.463876"/>
+       <limitY/>
+       <curve name="Fließgeschwindigkeit" color="#00cc00"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <Tab tab_name="Kraftheberstatus" containers="1">
+   <Container>
+    <DockSplitter orientation="-" count="3" sizes="0.346025;0.346025;0.307951">
+     <DockArea name="Höhe vorderer Kraftheber [mm]">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+       <range bottom="200.000000" top="600.000000" left="1777976734.484964" right="1777976748.459961"/>
+       <limitY min="200" max="600"/>
+       <curve name="SOLL-Höhe" color="#cc0000"/>
+       <curve name="IST-Höhe" color="#00cc00"/>
+      </plot>
+     </DockArea>
+     <DockArea name="Höhe mittlerer Kraftheber [mm]">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+       <range bottom="200.000000" top="600.000000" left="1777976734.484964" right="1777976748.459961"/>
+       <limitY min="200" max="600"/>
+       <curve name="SOLL-Höhe " color="#cc0000"/>
+       <curve name="IST-Höhe " color="#00cc00"/>
+      </plot>
+     </DockArea>
+     <DockArea name="Höhe hinterer Kraftheber [mm]">
+      <plot flip_y="false" mode="TimeSeries" flip_x="false" line_width="1.0">
+       <range bottom="200.000000" top="800.000000" left="1777976734.484964" right="1777976748.459961"/>
+       <limitY min="200" max="800"/>
+       <curve name="SOLL-Höhe  " color="#cc0000"/>
+       <curve name="IST-Höhe  " color="#00cc00"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+  <currentTabIndex index="7"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="0"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="DataLoad CSV">
+   <parameters delimiter="0" time_axis=""/>
+  </plugin>
+  <plugin ID="DataLoad MCAP"/>
+  <plugin ID="DataLoad ROS2 bags">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value=""/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="Foxglove ROS2 Bridge">
+   <foxglove_client clamp_large_arrays="0" address="127.0.0.1" use_timestamp="0" max_array_size="500" port="8765">
+    <topics/>
+   </foxglove_client>
+  </plugin>
+  <plugin ID="PlotJuggler ROS2 Bridge">
+   <websocket_client clamp_large_arrays="0" address="127.0.0.1" use_timestamp="0" max_array_size="500" port="9090">
+    <topics/>
+   </websocket_client>
+  </plugin>
+  <plugin ID="ROS2 Topic Subscriber">
+   <use_header_stamp value="false"/>
+   <discard_large_arrays value="true"/>
+   <max_array_size value="100"/>
+   <boolean_strings_to_number value="true"/>
+   <remove_suffix_from_strings value="true"/>
+   <selected_topics value="/fixposition/odometry_llh;/hyd_acu_vcu/nscmd1;/hyd_acu_vcu/nscmd2;/hyd_acu_vcu/nscmd3;/hyd_acu_vcu/nsstatus1;/hyd_acu_vcu/nsstatus2;/hyd_acu_vcu/nsstatus3;/hyd_acu_vcu/nsstatus4;/hyd_zone_manager/ref_cmd_vel;/hyd_zone_manager/zone_state;/work_lamp"/>
+  </plugin>
+  <plugin ID="UDP Server"/>
+  <plugin ID="WebSocket Server"/>
+  <plugin ID="ZMQ Subscriber"/>
+  <plugin ID="Fast Fourier Transform"/>
+  <plugin ID="Quaternion to RPY"/>
+  <plugin ID="Reactive Script Editor">
+   <library code="--[[ Helper function to create a series from arrays&#xa;&#xa; new_series: a series previously created with ScatterXY.new(name)&#xa; prefix:     prefix of the timeseries, before the index of the array&#xa; suffix_X:   suffix to complete the name of the series containing the X value. If [nil], use the index of the array.&#xa; suffix_Y:   suffix to complete the name of the series containing the Y value&#xa; timestamp:   usually the tracker_time variable&#xa;              &#xa; Example:&#xa; &#xa; Assuming we have multiple series in the form:&#xa; &#xa;   /trajectory/node.{X}/position/x&#xa;   /trajectory/node.{X}/position/y&#xa;   &#xa; where {N} is the index of the array (integer). We can create a reactive series from the array with:&#xa; &#xa;   new_series = ScatterXY.new(&quot;my_trajectory&quot;) &#xa;   CreateSeriesFromArray( new_series, &quot;/trajectory/node&quot;, &quot;position/x&quot;, &quot;position/y&quot;, tracker_time );&#xa;--]]&#xa;&#xa;function CreateSeriesFromArray( new_series, prefix, suffix_X, suffix_Y, timestamp )&#xa;  &#xa;  --- clear previous values&#xa;  new_series:clear()&#xa;  &#xa;  --- Append points to new_series&#xa;  index = 0&#xa;  while(true) do&#xa;&#xa;    x = index;&#xa;    -- if not nil, get the X coordinate from a series&#xa;    if suffix_X ~= nil then &#xa;      series_x = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_X) )&#xa;      if series_x == nil then break end&#xa;      x = series_x:atTime(timestamp)&#x9; &#xa;    end&#xa;    &#xa;    series_y = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_Y) )&#xa;    if series_y == nil then break end &#xa;    y = series_y:atTime(timestamp)&#xa;    &#xa;    new_series:push_back(x,y)&#xa;    index = index+1&#xa;  end&#xa;end&#xa;&#xa;--[[ Similar to the built-in function GetSeriesNames(), but select only the names with a give prefix. --]]&#xa;&#xa;function GetSeriesNamesByPrefix(prefix)&#xa;  -- GetSeriesNames(9 is a built-in function&#xa;  all_names = GetSeriesNames()&#xa;  filtered_names = {}&#xa;  for i, name in ipairs(all_names)  do&#xa;    -- check the prefix&#xa;    if name:find(prefix, 1, #prefix) then&#xa;      table.insert(filtered_names, name);&#xa;    end&#xa;  end&#xa;  return filtered_names&#xa;end&#xa;&#xa;--[[ Modify an existing series, applying offsets to all their X and Y values&#xa;&#xa; series: an existing timeseries, obtained with TimeseriesView.find(name)&#xa; delta_x: offset to apply to each x value&#xa; delta_y: offset to apply to each y value &#xa;  &#xa;--]]&#xa;&#xa;function ApplyOffsetInPlace(series, delta_x, delta_y)&#xa;  -- use C++ indices, not Lua indices&#xa;  for index=0, series:size()-1 do&#xa;    x,y = series:at(index)&#xa;    series:set(index, x + delta_x, y + delta_y)&#xa;  end&#xa;end&#xa;"/>
+   <scripts>
+    <script global="series_xy = ScatterXY.new(&quot;Caesar Trajectory&quot;)" name="Odometry_LLH" function="series_xy:clear()&#xa;&#xa;series_x = TimeseriesView.find(&quot;/fixposition/odometry_llh/longitude&quot;)&#xa;series_y = TimeseriesView.find(&quot;/fixposition/odometry_llh/latitude&quot;)&#xa;&#xa;if series_x == nil or series_y == nil then&#xa;    print(&quot;series not found&quot;)&#xa;    return&#xa;end&#xa;&#xa;nx = series_x:size()&#xa;&#xa;for i = 0, nx - 1 do&#xa;&#xa;    t, x = series_x:at(i)&#xa;&#xa;    y = series_y:atTime(t)&#xa;&#xa;  &#xa;&#xa;    if y ~= nil then&#xa;        series_xy:push_back(x, y)&#xa;    end&#xa;end"/>
+   </scripts>
+  </plugin>
+  <plugin ID="CSV Exporter"/>
+  <plugin ID="ROS2 Topic Re-Publisher"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <previouslyLoaded_Datafiles/>
+ <previouslyLoaded_Streamer name="ROS2 Topic Subscriber"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <customMathEquations>
+  <snippet name="0: OFF    4: ALARM_83    5: ALARM_82">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd3/aud_alrm_req</linked_source>
+  </snippet>
+  <snippet name="     IST-Rechts">
+   <global></global>
+   <function>return value * 2</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/steer_dir_ri</linked_source>
+  </snippet>
+  <snippet name="6: AMBER    7: AMBER_FLASH_SLOW    8: AMBER_FLASH_FAST">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd3/vis_alrm_2_req</linked_source>
+  </snippet>
+  <snippet name="Lastdrehmoment">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus4/eng_act_tor</linked_source>
+  </snippet>
+  <snippet name="IST-Lenkwinkel (links)">
+   <global></global>
+   <function>return value * v1</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/steer_ang_magn</linked_source>
+   <additional_sources>
+    <v1>/hyd_acu_vcu/nsstatus1/steer_dir_le</v1>
+   </additional_sources>
+  </snippet>
+  <snippet name="     IST-Rückwärts">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/drv_dir_bwd</linked_source>
+  </snippet>
+  <snippet name=" ">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/work_lamp</linked_source>
+  </snippet>
+  <snippet name="IST-Fließgeschwindigkeit">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus2/front_pto_spd</linked_source>
+  </snippet>
+  <snippet name="SOLL-Motordrehzahl">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/eng_spd</linked_source>
+  </snippet>
+  <snippet name="Kraftstoff-Level">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus4/eng_fuel_lvl</linked_source>
+  </snippet>
+  <snippet name="     IST-Vorwärts">
+   <global></global>
+   <function>return value * 4</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/drv_dir_fwd</linked_source>
+  </snippet>
+  <snippet name="SOLL-Höhe ">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd2/mid_pow_lift_hgt</linked_source>
+  </snippet>
+  <snippet name="2: SOLL-Rechts">
+   <global></global>
+   <function>return value * 2.03</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/steer_dir_ri</linked_source>
+  </snippet>
+  <snippet name="SOLL-Geschwindigkeit">
+   <global></global>
+   <function>return value * 0.01</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/drv_spd_magn</linked_source>
+  </snippet>
+  <snippet name="2: Vorderere Zapfwelle">
+   <global></global>
+   <function>return value*2</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/front_pto</linked_source>
+  </snippet>
+  <snippet name="1: Hintere Zapfwelle">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/rear_pto</linked_source>
+  </snippet>
+  <snippet name="IST-Lenkwinkel (rechts)">
+   <global></global>
+   <function>return value * v1</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/steer_ang_magn</linked_source>
+   <additional_sources>
+    <v1>/hyd_acu_vcu/nsstatus1/steer_dir_ri</v1>
+   </additional_sources>
+  </snippet>
+  <snippet name="SOLL-Lenkwinkel">
+   <global></global>
+   <function>return value * 0.01</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/steer_ang_magn</linked_source>
+  </snippet>
+  <snippet name="IST-Geschwindigkeit">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/drv_spd_magn</linked_source>
+  </snippet>
+  <snippet name="1: SOLL-Rückwärts">
+   <global></global>
+   <function>return value * 1.03</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/drv_dir_bwd</linked_source>
+  </snippet>
+  <snippet name="IST-Motordrehzahl">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus3/eng_spd</linked_source>
+  </snippet>
+  <snippet name="SOLL-Höhe">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd2/front_pow_lift_hgt</linked_source>
+  </snippet>
+  <snippet name="SOLL-Front-PTO">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/front_pto</linked_source>
+  </snippet>
+  <snippet name="IST-Höhe">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus3/front_pow_lift_hgt</linked_source>
+  </snippet>
+  <snippet name="SOLL-Fließgeschwindigkeit">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd3/front_pto_spd_req</linked_source>
+  </snippet>
+  <snippet name="Arbeitslampe">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/work_lamp</linked_source>
+  </snippet>
+  <snippet name="4: SOLL-Vorwärts">
+   <global></global>
+   <function>return value * 4.03</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/drv_dir_fwd</linked_source>
+  </snippet>
+  <snippet name="Zonengeschwindigkeitsgrenze">
+   <global></global>
+   <function>return value * 3.59</function>
+   <linked_source>/hyd_zone_manager/ref_cmd_vel/linear/x</linked_source>
+  </snippet>
+  <snippet name="3: SOLL-Links">
+   <global></global>
+   <function>return value * 3.03</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/steer_dir_le</linked_source>
+  </snippet>
+  <snippet name="IST-Höhe  ">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus3/rear_pow_lift_hgt</linked_source>
+  </snippet>
+  <snippet name="SOLL-Hintere-Zapfwelle">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/rear_pto</linked_source>
+  </snippet>
+  <snippet name="Fließgeschwindigkeit">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus2/rear_pto_spd</linked_source>
+  </snippet>
+  <snippet name="IST-Höhe ">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus3/mid_pow_lift_hgt</linked_source>
+  </snippet>
+  <snippet name="IST-Lenkwinkel">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/steer_ang_magn</linked_source>
+  </snippet>
+  <snippet name="SOLL-Vordere-Zapfwelle">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd1/front_pto</linked_source>
+  </snippet>
+  <snippet name="5: BLUE_GREEN">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd3/vis_alrm_1_req</linked_source>
+  </snippet>
+  <snippet name="     IST-Links">
+   <global></global>
+   <function>return value * 3</function>
+   <linked_source>/hyd_acu_vcu/nsstatus1/steer_dir_le</linked_source>
+  </snippet>
+  <snippet name="0: approaching    1: in Row    2: leaving    3: in Headland">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_zone_manager/zone_state/state</linked_source>
+  </snippet>
+  <snippet name="1: --- 2: --- 3: ---">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_zone_manager/zone_state/state</linked_source>
+  </snippet>
+  <snippet name="SOLL-Höhe  ">
+   <global></global>
+   <function>return value</function>
+   <linked_source>/hyd_acu_vcu/nscmd2/rear_pow_lift_hgt</linked_source>
+  </snippet>
+ </customMathEquations>
+ <snippets/>
+ <colorMaps/>
+ <!-- - - - - - - - - - - - - - - -->
+</root>
+
